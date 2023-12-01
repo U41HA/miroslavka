@@ -4,7 +4,7 @@ import axios from 'axios';
 definePageMeta({
   layout: 'default',
 });
-const { data: images } = await axios.get('/api/json/newborn.json');
+const { data: images } = await axios.get('/api/json/outlet.json');
 </script>
 
 <template>

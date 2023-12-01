@@ -13,8 +13,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiUrl: '',
-      baseUrl: '',
+      password: '',
     },
   },
   css: ['~/assets/styles/style.css'],
