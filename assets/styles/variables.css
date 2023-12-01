@@ -1,0 +1,6 @@
+:root {
+  /* Colors. Only complicated color, other in tailwind.css */
+  --color-purple-gradient: linear-gradient(91.47deg, #5b58f2 17.63%, #a35aff 81.98%);
+  --color-purple-gradient-active: linear-gradient(91.47deg, #5855e8 17.63%, #9652ec 81.98%);
+
+}

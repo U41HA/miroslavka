@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'VDNHLebedev2';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/VDNHLebedev2-Regular/VDNHLebedev2Regular.eot');
+  src: local('☺'), url('../fonts/VDNHLebedev2-Regular/VDNHLebedev2Regular.woff') format('woff'), url('../fonts/VDNHLebedev2-Regular/VDNHLebedev2Regular.ttf') format('truetype'), url('../fonts/VDNHLebedev2-Regular/VDNHLebedev2Regular.svg') format('svg');
+}
+
