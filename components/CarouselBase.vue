@@ -10,7 +10,7 @@ interface Props {
 import { useKeenSlider } from 'keen-slider/vue.es';
 import 'keen-slider/keen-slider.min.css';
 
-const current = ref(1);
+const current = ref(0);
 const [container, slider] = useKeenSlider({
   initial: current.value,
   slideChanged: (s) => {
@@ -69,5 +69,12 @@ const props = defineProps<Props>();
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 586px) {
+  .slide {
+    width: 100% !important;
+    height: auto !important;
+  }
 }
 </style>
