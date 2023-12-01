@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-import HelloComponent from '~/components/HelloComponent.vue';
+import axios from 'axios';
+
 definePageMeta({
   layout: 'default',
 });
+const { data: images } = await axios.get('/api/json/newborn.json');
 </script>
 
 <template>
-  <HelloComponent />
+  <CarouselBase :images="images" />
 </template>

@@ -8,6 +8,11 @@
   line-height: 17px;
 }
 
+.router-link-exact-active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 @media (max-width: 1023px) {
   .md\:title-h3 {
     font-size: 18px;

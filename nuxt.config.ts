@@ -18,7 +18,8 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/styles/style.css'],
-  modules: ['@pinia/nuxt'],
+  ssr: false,
+  modules: ['@pinia/nuxt', '@nuxt/image'],
   vite: {
     plugins: [
       svgLoader({
