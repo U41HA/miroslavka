@@ -7,7 +7,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "img": "node /public/index.mjs"
+    "img": "node /public/index_file.mjs"
   },
   "type": "commonjs",
   "devDependencies": {
