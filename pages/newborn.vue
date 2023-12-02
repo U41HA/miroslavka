@@ -11,7 +11,7 @@ definePageMeta({
 const route = useRoute();
 const router = useRouter();
 
-const password = 'mira14112023';
+const password = 'Mira14112023';
 
 const pass = ref('');
 while (pass.value !== password) {
