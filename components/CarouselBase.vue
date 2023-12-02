@@ -6,6 +6,7 @@ import IconRight from '~/components/icons/IconRight.vue';
 import type { IImages } from '~/intefaces/images';
 
 import 'keen-slider/keen-slider.min.css';
+import { useExampleStore } from '~/stores/example';
 
 interface Props {
   images: IImages[];
@@ -13,24 +14,18 @@ interface Props {
 
 const props = defineProps<Props>();
 
+const store = useExampleStore();
+
 const current = ref(0);
+const currentImg = computed(() => props.images.find((item, index) => index === current.value));
+store.setCurrentImage(currentImg.value);
 const [container, slider] = useKeenSlider({
   initial: current.value,
   slideChanged: (s) => {
     current.value = s.track.details.rel;
+    store.setCurrentImage(currentImg.value);
   },
 });
-
-const currentImg = computed(() => props.images.find((item, index) => index === current.value));
-
-function downloadURI() {
-  const link = document.createElement('a');
-  link.download = currentImg.value?.name || '';
-  link.href = currentImg.value?.path || '';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
 </script>
 
 <template>
@@ -51,15 +46,6 @@ function downloadURI() {
     </div>
     <div :class="['absolute text-white', $style['icon-left']]" @click="slider?.prev()">
       <IconLeft />
-    </div>
-    <div
-      :class="[
-        'absolute rounded-full border-solid  p-2 border-slate-500 text-slate-700 hover:text-slate-900 hover:drop-shadow-2xl transition',
-        $style['icon-download'],
-      ]"
-      @click="downloadURI"
-    >
-      <DownloadIcon />
     </div>
   </div>
 </template>
@@ -88,18 +74,6 @@ function downloadURI() {
   transform: translateY(-50%);
   width: 32px;
   height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon-download {
-  cursor: pointer;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;

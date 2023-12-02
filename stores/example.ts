@@ -1,23 +1,15 @@
 import { defineStore } from 'pinia';
+import type { IImages } from '~/intefaces/images';
 
 export const useExampleStore = defineStore('example', () => {
-  const { $axios } = useNuxtApp();
-  const examples = ref(['example_1', 'example_2']);
-  const todos = ref();
+  const currentImage = ref<IImages>();
 
-  async function fetchTest() {
-    const { data: todosData } = await $axios.get('https://jsonplaceholder.typicode.com/todos');
-    todos.value = todosData;
-  }
-
-  function clearStore() {
-    todos.value = [];
+  function setCurrentImage(image?: IImages) {
+    if (image) currentImage.value = image;
   }
 
   return {
-    examples,
-    todos,
-    clearStore,
-    fetchTest,
+    currentImage,
+    setCurrentImage,
   };
 });

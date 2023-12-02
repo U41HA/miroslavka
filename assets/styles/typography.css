@@ -9,8 +9,8 @@
 }
 
 .router-link-exact-active {
-  font-weight: 700;
-  text-decoration: underline;
+  font-weight: 600;
+    color: rgb(254 243 199 / var(--tw-text-opacity));
 }
 
 @media (max-width: 1023px) {
