@@ -21,7 +21,7 @@ function downloadURI() {
       <div class="flex items-center gap-20">
         <ul class="flex items-center gap-[12px] text-white text-s">
           <NuxtLink tag="li" to="/" :class="['transition']">Выписка</NuxtLink>
-          <NuxtLink tag="li" to="/newborn" :class="['transition']">New Born</NuxtLink>
+          <NuxtLink tag="li" to="/newborn" :class="['transition']">Newborn</NuxtLink>
         </ul>
         <div
           class="inline-flex items-center rounded-[12px] text-white cursor-pointer hover:text-amber-100 transition"
